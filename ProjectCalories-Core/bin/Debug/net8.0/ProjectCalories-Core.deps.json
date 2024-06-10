@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ProjectCalories-Core/1.0.0": {
+        "runtime": {
+          "ProjectCalories-Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ProjectCalories-Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

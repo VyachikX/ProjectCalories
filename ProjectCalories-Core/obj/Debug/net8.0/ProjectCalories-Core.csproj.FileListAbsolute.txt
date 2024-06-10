@@ -1,0 +1,11 @@
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\bin\Debug\net8.0\ProjectCalories-Core.deps.json
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\bin\Debug\net8.0\ProjectCalories-Core.dll
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\bin\Debug\net8.0\ProjectCalories-Core.pdb
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\obj\Debug\net8.0\ProjectCalories-Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\obj\Debug\net8.0\ProjectCalories-Core.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\obj\Debug\net8.0\ProjectCalories-Core.AssemblyInfo.cs
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\obj\Debug\net8.0\ProjectCalories-Core.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\obj\Debug\net8.0\ProjectCalories-Core.dll
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\obj\Debug\net8.0\refint\ProjectCalories-Core.dll
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\obj\Debug\net8.0\ProjectCalories-Core.pdb
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Core\obj\Debug\net8.0\ref\ProjectCalories-Core.dll
