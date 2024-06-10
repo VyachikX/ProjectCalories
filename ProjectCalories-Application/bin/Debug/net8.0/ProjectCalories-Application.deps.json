@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ProjectCalories-Application/1.0.0": {
+        "dependencies": {
+          "ProjectCalories-Core": "1.0.0"
+        },
+        "runtime": {
+          "ProjectCalories-Application.dll": {}
+        }
+      },
+      "ProjectCalories-Core/1.0.0": {
+        "runtime": {
+          "ProjectCalories-Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ProjectCalories-Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ProjectCalories-Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,0 +1,152 @@
+using ProjectCalories.Application.Interfaces;
+using ProjectCalories.Core.DTOs;
+using ProjectCalories.Core.Entities;
+using ProjectCalories.Core.Exceptions;
+using ProjectCalories.Core.Interfaces;
+
+namespace ProjectCalories.Application.Services
+{
+    public class MealPlanService_NEEDFIX : IMealPlanService
+    {
+        private readonly IUserRepository _userRepository;
+        private readonly IFoodRepository _foodRepository;
+
+        public MealPlanService(IUserRepository userRepository, IFoodRepository foodRepository)
+        {
+            _userRepository = userRepository;
+            _foodRepository = foodRepository;
+        }
+
+        public MealPlanDTO GenerateMealPlan(int userId)
+        {
+            var user = _userRepository.GetById(userId);
+
+            if (user == null)
+            {
+                throw new UserNotFoundException(userId);
+            }
+
+            // Fetch all foods
+            var allFoods = _foodRepository.GetAll();
+
+            // Calculate calorie adjustment based on user's purpose
+            double calorieAdjustment = 0;
+            switch (user.UserGoal)
+            {
+                case User.UserGoal.LoseWeight:
+                    calorieAdjustment = -500; // Reduce daily intake by 500 calories
+                    break;
+                case User.UserGoal.GainWeight:
+                    calorieAdjustment = 500; // Increase daily intake by 500 calories
+                    break;
+                case User.UserGoal.MaintainWeight:
+                    calorieAdjustment = 0; // No adjustment
+                    break;
+            }
+
+            // Adjust daily calorie intake based on user's purpose
+            var adjustedCalorieIntake = user.DailyCalorieIntake + calorieAdjustment;
+
+            // Calculate macro distribution based on user's purpose
+            var macroDistribution = GetMacroDistribution(user.UserGoal);
+
+            // Create meal plan with a balanced distribution of food groups
+            var mealPlan = CreateBalancedMealPlan(adjustedCalorieIntake, macroDistribution, allFoods);
+
+            // Return meal plan as DTO
+            return new MealPlanDTO
+            {
+                UserId = mealPlan.UserId,
+                Foods = mealPlan.Foods.Select(f => new FoodDTO
+                {
+                    Id = f.Id,
+                    Name = f.Name,
+                    Calories = f.Calories
+                }).ToList()
+            };
+        }
+
+        // Helper methods for macro distribution and meal plan generation
+
+        private Dictionary<string, double> GetMacroDistribution(User.UserGoal userGoal)
+        {
+            // Define default macro distribution for each purpose
+            var macroDistribution = new Dictionary<string, double>();
+
+            switch (userGoal)
+            {
+                case User.UserGoal.LoseWeight:
+                    macroDistribution.Add("Protein", 0.3); // 30% protein
+                    macroDistribution.Add("Carbohydrates", 0.4); // 40% carbohydrates
+                    macroDistribution.Add("Fats", 0.3); // 30% fats
+                    break;
+                case User.UserGoal.GainWeight:
+                    macroDistribution.Add("Protein", 0.35); // 35% protein
+                    macroDistribution.Add("Carbohydrates", 0.45); // 45% carbohydrates
+                    macroDistribution.Add("Fats", 0.2); // 20% fats
+                    break;
+                case User.UserGoal.MaintainWeight:
+                    macroDistribution.Add("Protein", 0.3); // 30% protein
+                    macroDistribution.Add("Carbohydrates", 0.45); // 45% carbohydrates
+                    macroDistribution.Add("Fats", 0.25); // 25% fats
+                    break;
+            }
+
+            return macroDistribution;
+        }
+
+        private MealPlan CreateBalancedMealPlan(double adjustedCalorieIntake, Dictionary<string, double> macroDistribution, List<Food> allFoods)
+        {
+            // Group foods by macro
+            var foodsByMacro = new Dictionary<string, List<Food>>
+            {
+                { "Protein", allFoods.
+
+
+                Where(f => f.Macro == "Protein").ToList() },
+                { "Carbohydrates", allFoods.Where(f => f.Macro == "Carbohydrates").ToList() },
+                { "Fats", allFoods.Where(f => f.Macro == "Fats").ToList() }
+            };
+
+            // Create meal plan with balanced macro distribution
+            var mealPlanFoods = new List<Food>();
+
+            // Calculate target calories for each macro
+            var targetMacroCalories = new Dictionary<string, double>();
+            foreach (var macro in macroDistribution.Keys)
+            {
+                targetMacroCalories.Add(macro, adjustedCalorieIntake * macroDistribution[macro]);
+            }
+
+            // Fill meal plan with foods based on macro distribution
+            foreach (var macro in targetMacroCalories.Keys)
+            {
+                var currentMacroCalories = 0.0;
+                var foodsForMacro = foodsByMacro[macro];
+
+                // Sort foods within each macro by calorie density
+                foodsForMacro = foodsForMacro.OrderBy(f => f.Calories / (f.Weight ?? 1)).ToList();
+
+                // Add foods until target calories for the macro are reached
+                foreach (var food in foodsForMacro)
+                {
+                    if (currentMacroCalories + food.Calories <= targetMacroCalories[macro])
+                    {
+                        mealPlanFoods.Add(food);
+                        currentMacroCalories += food.Calories;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return new MealPlan
+            {
+                UserId = 1, // Assuming user ID is known here
+                Foods = mealPlanFoods
+            };
+        }
+    }
+}
