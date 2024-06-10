@@ -1,0 +1,17 @@
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\ProjectCalories-Infrastructure.csproj.AssemblyReference.cache
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\ProjectCalories-Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\ProjectCalories-Infrastructure.AssemblyInfoInputs.cache
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\ProjectCalories-Infrastructure.AssemblyInfo.cs
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\ProjectCalories-Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\bin\Debug\net8.0\ProjectCalories-Infrastructure.deps.json
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\bin\Debug\net8.0\ProjectCalories-Infrastructure.dll
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\bin\Debug\net8.0\ProjectCalories-Infrastructure.pdb
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\bin\Debug\net8.0\ProjectCalories-Application.dll
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\bin\Debug\net8.0\ProjectCalories-Core.dll
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\bin\Debug\net8.0\ProjectCalories-Application.pdb
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\bin\Debug\net8.0\ProjectCalories-Core.pdb
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\ProjectC.3FF697E3.Up2Date
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\ProjectCalories-Infrastructure.dll
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\refint\ProjectCalories-Infrastructure.dll
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\ProjectCalories-Infrastructure.pdb
+C:\Users\admin\Documents\Мусорка\ProjectCalories\ProjectCalories-Infrastructure\obj\Debug\net8.0\ref\ProjectCalories-Infrastructure.dll
